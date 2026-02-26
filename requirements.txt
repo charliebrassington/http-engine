@@ -1,1 +1,4 @@
 lagom
+requests
+bs4
+tls_client

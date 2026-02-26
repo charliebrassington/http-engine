@@ -1,0 +1,1 @@
+from bootstrap.dependency_injection import create_di_container

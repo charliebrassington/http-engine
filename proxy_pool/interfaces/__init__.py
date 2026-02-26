@@ -1,0 +1,3 @@
+from proxy_pool.interfaces.abstract_proxy_pool_client import AbstractProxyPoolClient
+from proxy_pool.interfaces.abstract_proxy_collector_method import AbstractProxyCollectorMethod
+from proxy_pool.interfaces.abstract_proxy_collector_service import AbstractProxyCollectorService

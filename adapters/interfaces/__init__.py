@@ -1,0 +1,1 @@
+from adapters.interfaces.abstract_http_adapter import AbstractHttpAdapter
