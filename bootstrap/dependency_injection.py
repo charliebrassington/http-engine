@@ -21,8 +21,11 @@ def create_proxy_pool_deps(container: Container):
     }
 
     container[AbstractProxyCollectorService] = ProxyCollectorService
+    container[AbstractProxyQualityService] = ProxyQualityService()
 
-    container[AbstractProxyPoolClient] = ProxyPoolClient(container[AbstractProxyCollectorService])
+    container[AbstractProxyPoolClient] = ProxyPoolClient(
+        container[AbstractProxyCollectorService], container[AbstractProxyQualityService]
+    )
 
 
 def create_di_container() -> Container:

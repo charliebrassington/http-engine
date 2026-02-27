@@ -9,3 +9,4 @@ class ProxyPoolConfig:
     ratelimit: int = 300
     proxy_type: ProxyType = ProxyType.FREE
     proxy_path: str = ""
+    dead_proxy_fail_limit: int = 100
