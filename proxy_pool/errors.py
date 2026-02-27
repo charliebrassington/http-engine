@@ -1,0 +1,4 @@
+
+
+class ProxyPathNotSet(Exception):
+    pass
