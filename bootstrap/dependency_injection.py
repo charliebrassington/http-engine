@@ -3,15 +3,16 @@ from typing import Dict, Callable, List
 from adapters import *
 from domain.models import *
 from proxy_pool import *
+from http_engine import *
 
 from lagom import Container
 
 
-def create_adapter_deps(container: Container):
+def create_adapter_deps(container: Container) -> None:
     container[AbstractHttpAdapter] = PlainHttpAdapter
 
 
-def create_proxy_pool_deps(container: Container):
+def create_proxy_pool_deps(container: Container) -> None:
     container[FreeProxyCollector] = FreeProxyCollector
     container[PrivateProxyCollector] = PrivateProxyCollector
 
@@ -28,10 +29,18 @@ def create_proxy_pool_deps(container: Container):
     )
 
 
+def create_http_engine_deps(container: Container) -> None:
+    container[AbstractProxyHttpRequestService] = ProxyHttpRequestService
+    container[AbstractBatchHttpProxyService] = BatchHttpProxyService
+    container[AbstractHttpRequestService] = HttpRequestService
+    container[AbstractHttpEngineClient] = HttpEngineClient
+
+
 def create_di_container() -> Container:
     dep_order_list: List[Callable] = [
         create_adapter_deps,
-        create_proxy_pool_deps
+        create_proxy_pool_deps,
+        create_http_engine_deps
     ]
 
     di_container = Container()

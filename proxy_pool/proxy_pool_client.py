@@ -4,7 +4,6 @@ from domain.models import ProxyPoolConfig, ProxyType
 
 from proxy_pool.interfaces import AbstractProxyPoolClient, AbstractProxyCollectorService, AbstractProxyQualityService
 from proxy_pool.models import CollectProxiesResponse
-from proxy_pool.errors import ProxyPathNotSet
 
 
 class ProxyPoolClient(AbstractProxyPoolClient):
