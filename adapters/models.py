@@ -18,4 +18,4 @@ class HttpResponse:
 
     @property
     def soup(self) -> BeautifulSoup:
-        return BeautifulSoup(self.raw_text)
+        return BeautifulSoup(self.raw_text, features="lxml")
