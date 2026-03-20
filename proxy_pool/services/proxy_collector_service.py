@@ -5,7 +5,8 @@ from domain.models import ProxyPoolConfig, ProxyType
 from adapters import AbstractHttpAdapter
 
 from proxy_pool.interfaces import AbstractProxyCollectorMethod, AbstractProxyCollectorService
-from proxy_pool.errors import ProxyPathNotSet
+from core.errors import ProxyPathNotSet
+
 
 PROXY_URL_LIST = (
     "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=ipport&format=text",

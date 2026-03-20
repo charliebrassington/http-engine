@@ -8,8 +8,9 @@ from bs4 import BeautifulSoup
 
 @dataclass
 class HttpResponse:
-    raw_text: str
-    status_code: int
+    success: bool
+    raw_text: str = ""
+    status_code: int = 0
 
     @property
     def json(self) -> Any:
@@ -17,4 +18,4 @@ class HttpResponse:
 
     @property
     def soup(self) -> BeautifulSoup:
-        return BeautifulSoup(self.raw_text)
+        return BeautifulSoup(self.raw_text, features="lxml")
