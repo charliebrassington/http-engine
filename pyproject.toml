@@ -1,0 +1,14 @@
+[project]
+name = "http_engine"
+version = "0.1.0"
+description = "The HTTP Engine"
+authors = [{ name = "Charlie" }]
+dependencies = []
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["http_engine*"]

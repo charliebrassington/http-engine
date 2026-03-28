@@ -1,0 +1,4 @@
+from http_engine.proxy_pool.interfaces.abstract_proxy_pool_client import AbstractProxyPoolClient
+from http_engine.proxy_pool.interfaces.abstract_proxy_collector_method import AbstractProxyCollectorMethod
+from http_engine.proxy_pool.interfaces.abstract_proxy_collector_service import AbstractProxyCollectorService
+from http_engine.proxy_pool.interfaces.abstract_proxy_quality_service import AbstractProxyQualityService
